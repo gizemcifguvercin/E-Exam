@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Session["LogedUserID"] != null)
+{
+    <ul class="nav navbar-nav navbar-right">
+
+       
+        <li>@Html.ActionLink("Sınav Oluştur", "CreateExam", "Rss", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+        <li>@Html.ActionLink("Sınavları Listele", "Index", "Articles", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+      
+         
+        <li>@Html.ActionLink("Çıkış", "../Users/Logout")</li>
+
+      
+    </ul>
+}
+else
+{
+    
+}

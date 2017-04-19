@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ExamProject.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            <h2>#</h2>
+        </th>
+        <th>
+            <h2>Başlık</h2>
+        </th>
+       
+        <th>
+            <h2>Tarih</h2>
+        </th>
+       
+         
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.articleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creationDate)
+        </td>
+       
+        <td>
+       
+            @Html.ActionLink("Sil", "Delete", new { id=item.articleID })
+            @Html.ActionLink("Sınav Ol", "Exam", new { id = item.articleID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,163 @@
+﻿
+<script src="~/Scripts/ValidateChoices.js"></script>
+    <script type="text/javascript">
+ 
+        $(document).ready(function () {
+            $("#A1").click(function () {
+                document.getElementById("q1").value = "A";
+            
+            });
+
+        });
+        $(document).ready(function () {
+            $("#B1").click(function () {
+                document.getElementById("q1").value = "B";
+            });
+        });
+        $(document).ready(function () {
+            $("#C1").click(function () {
+                document.getElementById("q1").value = "C";
+            });
+        });
+        $(document).ready(function () {
+            $("#D1").click(function () {
+                document.getElementById("q1").value = "D";
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#A2").click(function () {
+                document.getElementById("q2").value = "A";
+            });
+
+        });
+        $(document).ready(function () {
+            $("#B2").click(function () {
+                document.getElementById("q2").value = "B";
+            });
+        });
+        $(document).ready(function () {
+            $("#C2").click(function () {
+                document.getElementById("q2").value = "C";
+            });
+        });
+        $(document).ready(function () {
+            $("#D2").click(function () {
+                document.getElementById("q2").value = "D";
+            });
+        });
+
+        $(document).ready(function () {
+            $("#A3").click(function () {
+                document.getElementById("q3").value = "A";
+            });
+
+        });
+        $(document).ready(function () {
+            $("#B3").click(function () {
+                document.getElementById("q3").value = "B";
+            });
+        });
+        $(document).ready(function () {
+            $("#C3").click(function () {
+                document.getElementById("q3").value = "C";
+            });
+        });
+        $(document).ready(function () {
+            $("#D3").click(function () {
+                document.getElementById("q3").value = "D";
+            });
+        });
+        $(document).ready(function () {
+            $("#A4").click(function () {
+                document.getElementById("q4").value = "A";
+            });
+
+        });
+        $(document).ready(function () {
+            $("#B4").click(function () {
+                document.getElementById("q4").value = "B";
+            });
+        });
+        $(document).ready(function () {
+            $("#C4").click(function () {
+                document.getElementById("q4").value = "C";
+            });
+        });
+        $(document).ready(function () {
+            $("#D4").click(function () {
+                document.getElementById("q4").value = "D";
+            });
+        });
+      
+    </script>
+ 
+
+    <input id ="q1" type="hidden" />
+    <input id="q2" type="hidden" />
+    <input id="q3" type="hidden" />
+    <input id="q4" type="hidden" />
+    <input id="aid" type="hidden" value="@ViewBag.aid" />
+    <div class="container">
+        <div class="row text-center">
+            <h3>@ViewBag.title</h3>  
+            <br /><br />
+        </div>
+        <div class="row text-center">
+            @ViewBag.description
+            <br /><br />
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                1)   @ViewBag.q1
+                <br />
+                <button id="A1" class="btn btn-default">A) @ViewBag.q1a </button><br />
+                <button id="B1" class="btn btn-default">B) @ViewBag.q1b</button><br />
+                <button  id="C1" class="btn btn-default">C) @ViewBag.q1c</button><br />
+                <button id="D1" class="btn btn-default">D) @ViewBag.q1d</button><br />
+                <br /><br />
+            </div>
+            <div class="col-sm-6">
+                2)   @ViewBag.q2
+                <br />
+                <button id="A2" class="btn btn-default">A) @ViewBag.q2a </button><br />
+                <button id="B2" class="btn btn-default">B) @ViewBag.q2b</button><br />
+                <button id="C2" class="btn btn-default">C) @ViewBag.q2c</button><br />
+                <button id="D2" class="btn btn-default">D) @ViewBag.q2d</button><br />
+                <br /><br />
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                3)   @ViewBag.q3
+                <br />
+                <button id="A3" class="btn btn-default">A) @ViewBag.q3a </button><br />
+                <button id="B3" class="btn btn-default">B) @ViewBag.q3b</button><br />
+                <button id="C3" class="btn btn-default">C) @ViewBag.q3c</button><br />
+                <button id="D3" class="btn btn-default">D) @ViewBag.q3d</button><br />
+                <br /><br />
+
+            </div>
+            <div class="col-sm-6">
+                4) @ViewBag.q4
+                <br />
+                <button id="A4" class="btn btn-default">A) @ViewBag.q4a </button><br />
+                <button id="B4" class="btn btn-default">B) @ViewBag.q4b</button><br />
+                <button id="C4" class="btn btn-default">C) @ViewBag.q4c</button><br />
+                <button id="D4" class="btn btn-default">D) @ViewBag.q4d</button><br />
+                <br /><br />
+            </div>
+
+        </div>
+        <div class="row text-center">
+            <button id="button1" type="submit" onclick="ValidateChoices()" class="btn btn-info">SINAVI TAMAMLA</button>
+            <br /><br />
+        </div>
+               
+          
+      
+    </div>
+
+    

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="examDBModelStoreContainer" CdmEntityContainer="examDBEntities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="examDBModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="question4_D" ColumnName="question4_D" />
+          <ScalarProperty Name="question4_C" ColumnName="question4_C" />
+          <ScalarProperty Name="question4_B" ColumnName="question4_B" />
+          <ScalarProperty Name="question4_A" ColumnName="question4_A" />
+          <ScalarProperty Name="question4_choice" ColumnName="question4_choice" />
+          <ScalarProperty Name="question4" ColumnName="question4" />
+          <ScalarProperty Name="question3_D" ColumnName="question3_D" />
+          <ScalarProperty Name="question3_C" ColumnName="question3_C" />
+          <ScalarProperty Name="question3_B" ColumnName="question3_B" />
+          <ScalarProperty Name="question3_A" ColumnName="question3_A" />
+          <ScalarProperty Name="question3_choice" ColumnName="question3_choice" />
+          <ScalarProperty Name="question3" ColumnName="question3" />
+          <ScalarProperty Name="question2_D" ColumnName="question2_D" />
+          <ScalarProperty Name="question2_C" ColumnName="question2_C" />
+          <ScalarProperty Name="question2_B" ColumnName="question2_B" />
+          <ScalarProperty Name="question2_A" ColumnName="question2_A" />
+          <ScalarProperty Name="question2_choice" ColumnName="question2_choice" />
+          <ScalarProperty Name="question2" ColumnName="question2" />
+          <ScalarProperty Name="question1_D" ColumnName="question1_D" />
+          <ScalarProperty Name="question1_C" ColumnName="question1_C" />
+          <ScalarProperty Name="question1_B" ColumnName="question1_B" />
+          <ScalarProperty Name="question1_A" ColumnName="question1_A" />
+          <ScalarProperty Name="question1_choice" ColumnName="question1_choice" />
+          <ScalarProperty Name="question1" ColumnName="question1" />
+          <ScalarProperty Name="articleID" ColumnName="articleID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="examDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

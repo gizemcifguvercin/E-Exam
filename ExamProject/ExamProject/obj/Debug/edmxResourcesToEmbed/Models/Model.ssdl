@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="examDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="articleID" />
+    </Key>
+    <Property Name="articleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="creationDate" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="question1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question1_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="question1_A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question1_B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question1_C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question1_D" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question2_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="question2_A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question2_B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question2_C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question2_D" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question3_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="question3_A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question3_B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question3_C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question3_D" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question4_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="question4_A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question4_B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question4_C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question4_D" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Article_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="examDBModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Article_User" Association="Self.FK_Article_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

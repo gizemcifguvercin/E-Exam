@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="examDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="articleID" />
+          </Key>
+          <Property Name="articleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="creationDate" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="question1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question1_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="question1_A" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question1_B" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question1_C" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question1_D" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question2_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="question2_A" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question2_B" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question2_C" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question2_D" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question3" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question3_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="question3_A" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question3_B" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question3_C" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question3_D" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question4" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question4_choice" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="question4_A" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question4_B" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question4_C" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question4_D" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Article_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Article" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="examDBModelStoreContainer">
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Article_User" Association="Self.FK_Article_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Article" EntitySet="Article" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="examDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="articleID" />
+          </Key>
+          <Property Name="articleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Article_User" FromRole="Article" ToRole="User" />
+          <Property Name="question1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question1_choice" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="question1_A" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question1_B" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question1_C" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question1_D" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question2_choice" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="question2_A" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question2_B" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question2_C" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question2_D" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question3" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question3_choice" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="question3_A" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question3_B" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question3_C" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question3_D" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question4" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question4_choice" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="question4_A" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question4_B" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question4_C" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question4_D" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="creationDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Articles" Relationship="Self.FK_Article_User" FromRole="User" ToRole="Article" />
+        </EntityType>
+        <Association Name="FK_Article_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Article" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="examDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Articles" EntityType="Self.Article" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Article_User" Association="Self.FK_Article_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Article" EntitySet="Articles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="examDBModelStoreContainer" CdmEntityContainer="examDBEntities">
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="examDBModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="question4_D" ColumnName="question4_D" />
+                <ScalarProperty Name="question4_C" ColumnName="question4_C" />
+                <ScalarProperty Name="question4_B" ColumnName="question4_B" />
+                <ScalarProperty Name="question4_A" ColumnName="question4_A" />
+                <ScalarProperty Name="question4_choice" ColumnName="question4_choice" />
+                <ScalarProperty Name="question4" ColumnName="question4" />
+                <ScalarProperty Name="question3_D" ColumnName="question3_D" />
+                <ScalarProperty Name="question3_C" ColumnName="question3_C" />
+                <ScalarProperty Name="question3_B" ColumnName="question3_B" />
+                <ScalarProperty Name="question3_A" ColumnName="question3_A" />
+                <ScalarProperty Name="question3_choice" ColumnName="question3_choice" />
+                <ScalarProperty Name="question3" ColumnName="question3" />
+                <ScalarProperty Name="question2_D" ColumnName="question2_D" />
+                <ScalarProperty Name="question2_C" ColumnName="question2_C" />
+                <ScalarProperty Name="question2_B" ColumnName="question2_B" />
+                <ScalarProperty Name="question2_A" ColumnName="question2_A" />
+                <ScalarProperty Name="question2_choice" ColumnName="question2_choice" />
+                <ScalarProperty Name="question2" ColumnName="question2" />
+                <ScalarProperty Name="question1_D" ColumnName="question1_D" />
+                <ScalarProperty Name="question1_C" ColumnName="question1_C" />
+                <ScalarProperty Name="question1_B" ColumnName="question1_B" />
+                <ScalarProperty Name="question1_A" ColumnName="question1_A" />
+                <ScalarProperty Name="question1_choice" ColumnName="question1_choice" />
+                <ScalarProperty Name="question1" ColumnName="question1" />
+                <ScalarProperty Name="articleID" ColumnName="articleID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="examDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,241 @@
+﻿@model ExamProject.Models.Article
+
+@{
+    ViewBag.Title = "Delete";
+}
+ 
+<div>
+   
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1_choice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1_choice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1_A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1_A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1_B)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1_B)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1_C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1_C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2_choice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2_choice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2_A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2_A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2_B)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2_B)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2_C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2_C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3_choice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3_choice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3_A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3_A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3_B)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3_B)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3_C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3_C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4_choice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4_choice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4_A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4_A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4_B)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4_B)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4_C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4_C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4_D)
+        </dd>
+
+       
+        <dd>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="submit" value="Sil" class="btn btn-info" />
+
+            }
+        </dd>
+
+    </dl>
+
+    
+</div>

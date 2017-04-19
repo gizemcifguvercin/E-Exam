@@ -1,0 +1,177 @@
+﻿@model ExamProject.Models.Article
+@{
+    ViewBag.Title = "CreateExam";
+}
+<script type="text/javascript">
+    function descofTitle(t, d) {
+        var t = document.getElementById(t);
+        var d = document.getElementById(d);
+        d.innerHTML =$("#slct option:selected").val();
+    }
+
+</script>
+<script src="~/Scripts/CreateExam.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <h4>Yazı: </h4><br />
+        <select id="slct" name="slct" onchange="descofTitle(this.id,'desc')">
+            @foreach (var item in ViewBag.listItem)
+            {
+                <option value="@item.Description">@item.Title</option>
+
+            }
+        </select>
+        <br />
+        <br />
+        <h4 id="desc" name="desc"></h4>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <input id="s1" type="text" class="form-control" name="s1" placeholder="Soru 1">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="a1" type="text" class="form-control" name="a1" placeholder="A)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="b1" type="text" class="form-control" name="b1" placeholder="B)"><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="c1" type="text" class="form-control" name="c1" placeholder="C)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="d1" type="text" class="form-control" name="d1" placeholder="D)"><br />
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                   
+                    <select id="s1c" name="s1c">
+                        <option selected hidden>Doğru Cevap Seç</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+                </div>
+                </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <input id="s2" type="text" class="form-control" name="s2" placeholder="Soru 2">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="a2" type="text" class="form-control" name="a2" placeholder="A)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="b2" type="text" class="form-control" name="b2" placeholder="B)"><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="c2" type="text" class="form-control" name="c2" placeholder="C)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="d2" type="text" class="form-control" name="d2" placeholder="D)"><br />
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                    <select id="s2c" name="s2c">
+                        <option selected hidden>Doğru Cevap Seç</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+                </div>
+                </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <input id="s3" type="text" class="form-control" name="s3" placeholder="Soru 3">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="a3" type="text" class="form-control" name="a3" placeholder="A)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="b3" type="text" class="form-control" name="b3" placeholder="B)"><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="c3" type="text" class="form-control" name="c3" placeholder="C)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="d3" type="text" class="form-control" name="d3" placeholder="D)"><br />
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                    <select id="s3c" name="s3c">
+                        <option selected hidden>Doğru Cevap Seç</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+                </div>
+                </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <input id="s4" type="text" class="form-control" name="s4" placeholder="Soru 4">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="a4" type="text" class="form-control" name="a4" placeholder="A)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="b4" type="text" class="form-control" name="b4" placeholder="B)"><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input id="c4" type="text" class="form-control" name="c4" placeholder="C)"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <input id="d4" type="text" class="form-control" name="d4" placeholder="D)"><br />
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                    <select id="s4c" name="s4c">
+                        <option selected hidden>Doğru Cevap Seç</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+                </div>
+                </div>
+        </div>
+        <br />
+        <br />
+        <div class="row text-center">
+            <div class="col-md-12">
+
+                <button type="submit" onclick="CreateExam()" class="btn btn-info">SINAV OLUŞTUR</button>
+            </div>
+        </div>
+
+    </div>
+</div>
